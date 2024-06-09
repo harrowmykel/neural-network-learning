@@ -1,2 +1,4 @@
 https://codelabs.developers.google.com/codelabs/tfjs-training-regression/index.html#7
 https://codelabs.developers.google.com/codelabs/tfjs-training-regression/index.html#8
+https://clever-tan-school.glitch.me/
+https://glitch.com/edit/#!/clever-tan-school?path=script2.js%3A124%3A49
