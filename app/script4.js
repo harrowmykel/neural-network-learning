@@ -65,54 +65,26 @@ async function getData() {
 }
 
 function displayData(data) {
+    const keys = ['a', 'b', 'c'];
+    keys.forEach((e) => {
+        const values = [];
+        data.forEach((d) => {
+            values.push({
+                x: d[e],
+                y: d.result,
+            });
+        });
 
-    const values = [];
-    const values2 = [];
-    const values3 = [];
-
-    data.forEach((d) => {
-        values.push({
-            x: d.a,
-            y: d.d,
-        });
-        values2.push({
-            x: d.b,
-            y: d.d,
-        });
-        values3.push({
-            x: d.c,
-            y: d.d,
-        });
+        tfvis.render.scatterplot(
+            { name: e.toUpperCase() + " v D" },
+            { values: values },
+            {
+                xLabel: e.toUpperCase(),
+                yLabel: "D",
+                height: 300,
+            }
+        );
     });
-
-
-    tfvis.render.scatterplot(
-        { name: "A v D" },
-        { values: values },
-        {
-            xLabel: "A",
-            yLabel: "D",
-            height: 300,
-        }
-    );
-    tfvis.render.scatterplot(
-        { name: "B v D" },
-        { values: values2 },
-        {
-            xLabel: "B",
-            yLabel: "D",
-            height: 300,
-        }
-    );
-    tfvis.render.scatterplot(
-        { name: "C v D" },
-        { values: values3 },
-        {
-            xLabel: "C",
-            yLabel: "D",
-            height: 300,
-        }
-    );
 }
 
 async function runWithValidationData() {
